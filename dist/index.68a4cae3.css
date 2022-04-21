@@ -1,0 +1,203 @@
+@import "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap";
+* {
+  color: #d8d8d8;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  height: auto;
+  width: 100vw;
+  background-color: #28282a;
+  font-family: Open Sans, sans-serif;
+}
+
+.content {
+  z-index: 1;
+  margin: 0 1.5em;
+}
+
+@media screen and (min-width: 750px) {
+  .content {
+    margin: 0 25vw;
+  }
+}
+
+.button-container {
+  height: auto;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.btn {
+  height: 3em;
+  width: 12em;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  transition: all .5s;
+  display: flex;
+}
+
+@media screen and (min-width: 750px) {
+  .btn {
+    font-size: 1.1em;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bfb7a4;
+  border-radius: 10px;
+}
+
+input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 1.4em;
+  cursor: pointer;
+  opacity: .7;
+  background: #171817;
+  border: none;
+  border-radius: 1.4em;
+  transition: all .2s;
+  box-shadow: inset 2px 2px 3px #0000003f;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 1.9em;
+  width: 1.9em;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+input[type="range"]:hover {
+  opacity: 1;
+  transition: all .2s;
+}
+
+input[type="color"] {
+  width: 100%;
+  background: none;
+  border: none;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  height: 2em;
+  width: 100%;
+  border: none;
+  border-radius: 2em;
+}
+
+select {
+  text-align: center;
+  height: 2em;
+  opacity: .6;
+  background: #131414;
+  border: none;
+  border-radius: 4em;
+}
+
+option {
+  height: 10em;
+  margin: 2em 0;
+}
+
+select:hover {
+  opacity: 1;
+}
+
+.about {
+  color: #bfb7a4;
+  border: 2px solid #bfb7a4;
+}
+
+@media screen and (min-width: 750px) {
+  .about {
+    opacity: .5;
+  }
+
+  .about:hover {
+    opacity: 1;
+    color: #28282a;
+    background-color: #bfb7a4;
+  }
+}
+
+line {
+  stroke: #171817;
+}
+
+@media screen and (min-width: 750px) {
+  line {
+    stroke: beige;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  svg {
+    opacity: .3;
+    transition: all .6s;
+  }
+
+  svg:hover {
+    opacity: 1;
+    transition: all .6s;
+  }
+}
+
+.viewer {
+  margin: 2em 0 0;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 55vh;
+}
+
+.description {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  margin: 3em 0;
+}
+
+@media screen and (min-width: 750px) {
+  .description {
+    margin: 5em 0;
+  }
+}
+
+.button-container .custom {
+  color: #28282a;
+  opacity: 1;
+  background: #bfb7a4;
+  transition: all 1s;
+}
+
+@media screen and (min-width: 750px) {
+  .button-container .custom {
+    opacity: .6;
+    transition: all .5s;
+  }
+
+  .button-container .custom:hover {
+    opacity: 1;
+    transition: all .5s;
+  }
+}
+
+/*# sourceMappingURL=index.68a4cae3.css.map */

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES3",
+    "strict": true,
+    "module": "commonjs",
+    // "jsx": "preserve",
+    // "esModuleInterop": true,
+    // "allowJs": true,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "rootDir": "src/scripts",
+    "moduleResolution": "node"
+  },
+  "transformers": {
+    "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
+  }
+}

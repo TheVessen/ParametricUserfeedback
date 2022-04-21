@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+
+@mixin breakpoint($point) {
+    @if point==mobile {
+        @media screen and (min-width: 100px) {
+            @content;
+        }
+    }
+
+    @else if $point==mobileTall {
+        @media screen and (min-height: 800px) {
+            @content;
+        }
+    }
+
+
+    @else if $point==tabletL {
+        @media screen and (orientation: landscape) and (min-height: 750px) and (max-height: 900px) {
+            @content;
+        }
+    }
+
+    @else if $point==tablet {
+        @media screen and (min-width: 750px) {
+            @content;
+        }
+    }
+
+    @else if $point==tabletHi {
+        @media screen and (min-width: 1020px) {
+            @content;
+        }
+    }
+
+    @else if $point==tabletHiP {
+        @media screen and (min-width: 1020px) and (orientation: portrait) {
+            @content;
+        }
+    }
+
+    @else if $point==tabletHiL {
+        @media screen and (width: 1366px) and (height: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $point==desktop {
+        @media screen and (min-width: 1050px) {
+            @content;
+        }
+    }
+
+    @else if $point==desktopFull {
+        @media screen and (min-width: 1600px) {
+            @content;
+        }
+    }
+}
+
+//colors
+
+$colors: ( //main colors
+    white: #ffff,
+    sand:#bfb7a4,
+    sand-dark: darken(#bfb7a4ce, 20%),
+    mokka: #bfb7a4,
+    neutralGrey:#28282a,
+    darkGrey: #171817,
+    olives: #a2a398,
+    puncyGreen: #71a456,
+    btn1: #965555,
+    btn1Hover: #965555,
+    btn2: #3c8897,
+    btn2Hover: #3c8897,
+    btnAbout: #545454,
+    btnAboutHover: #cb4a4a,
+    infoContainer: #575757,
+    boderColor: rgba(126, 126, 126, 0.5));
+
+/*
+function for assigning the main colors e.g.: 
+color: color(grey);
+*/
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+$margin-mobile: 1.5em;
+$margin-desktop: 25vw;
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #d8d8d8;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    height: auto;
+    width: 100vw;
+    font-family: 'Open Sans', sans-serif;
+    background-color: color(neutralGrey);
+}
+
+.content {
+    z-index: 1;
+    margin: 0 $margin-mobile;
+
+    @include breakpoint(tablet) {
+        margin: 0 $margin-desktop;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    width: 12em;
+    border-radius: 2em;
+    font-weight: 600;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    transition: .5s;
+
+    @include breakpoint(tablet) {
+        font-size: 1.1em;
+    }
+}
+
+::-webkit-scrollbar {
+    background-color: #000000;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: color(mokka);
+    border-radius: 10px;
+}
+
+//Styling of input elements
+
+$sliderheightmobile: 1.4em;
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: $sliderheightmobile;
+    border-radius: $sliderheightmobile;
+    background: color(darkGrey);
+    cursor: pointer;
+    opacity: .7;
+    transition: .2s;
+    border: none;
+    // border: 2px solid color(boderColor);
+    box-shadow: inset 2px 2px 3px #0000003f;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    height: $sliderheightmobile +.5em;
+    width: $sliderheightmobile +.5em;
+    border-radius: 50%;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+    transition: .2s;
+}
+
+input[type="color"] {
+    border: none;
+    background: none;
+    width: 100%;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    height: 2em;
+    width: 100%;
+    border: none;
+    border-radius: 2em;
+    // border: 2px solid color(boderColor);
+}
+
+select {
+    text-align: center;
+    height: 2em;
+    background: #131414;
+    border-radius: 4em;
+    border: none;
+    opacity: .6;
+    // border: 2px solid color(boderColor);
+}
+
+option {
+    height: 10em;
+    margin: 2em 0;
+}
+
+select:hover {
+    opacity: 1;
+}
+
+.about {
+    color: color(mokka);
+    border: solid 2px color(mokka);
+}
+
+@include breakpoint(tablet) {
+    .about {
+        opacity: .5;
+    }
+
+    .about:hover {
+        opacity: 1;
+        background-color: color(mokka);
+        color: color(neutralGrey);
+    }
+}
+
+line {
+    stroke: color(darkGrey);
+
+    @include breakpoint(tablet) {
+        stroke: beige;
+    }
+}
+
+@include breakpoint(tablet) {
+    svg {
+        opacity: .3;
+        transition: .6s;
+    }
+
+    svg:hover {
+        opacity: 1;
+        transition: .6s;
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "prod": "parcel build "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.1",
+    "buffer": "^6.0.3",
+    "firebase-tools": "^1.2.0",
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.4.1",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@shapediver/viewer": "^1.14.0",
+    "@shapediver/viewer.features.interaction": "^1.14.1",
+    "dotenv": "^16.0.0",
+    "firebase": "^9.6.11"
+  }
+}
