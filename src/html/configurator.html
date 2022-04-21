@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/configurator.scss">
+    <link rel="stylesheet" href="../style/configurator.scss">
     <title>Configurator</title>
-    <script src="/src/scripts/configurator.js" type="module"></script>
-    <script src="/src/scripts/siteMechanics.js" type="module"></script>
+    <script src="../scripts/configurator.js" type="module"></script>
+    <script src="../scripts/siteMechanics.js" type="module"></script>
   </head>
   
   <body>
     <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: black;"
-      href="index.html">      
+      href="../index.html">      
       <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414" viewBox="0 0 19.207 11.414">
         <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"  stroke-linecap="round" stroke-width="1.6"/>
         <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"  stroke-linecap="round" stroke-width="1.6"/>
@@ -31,12 +31,18 @@
           <div class="hedding"><h3 style="text-transform: uppercase; opacity: .6; letter-spacing: .1em;">Current Status uf the product</h3></div>
         </div>
         <!-- Toggle Button Mobile only -->
-        <div class="toggle-menue" id="toggleMenue"></div>
+        <div class="toggle-menue" id="toggleMenue">
+          <svg xmlns="http://www.w3.org/2000/svg" width="6.414" height="11.414" viewBox="0 0 6.414 11.414">
+            <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none" stroke-linecap="round" stroke-width="1"/>
+            <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none" stroke-linecap="round" stroke-width="1"/>
+          </svg>          
+        </div>
       </div>
       <!-- Showing all paameters -->
       <div id="parameterContainer" class="parameter-container">
+
       </div> 
-      <div class="button-container" style="margin: 5em 0 5em"><a class="btn submit" href="/src/thankyou.html" id="submit">Submit</a></div>
+      <div class="button-container" style="margin: 5em 0 5em"><a class="btn submit" href="thankyou.html" id="submit">Submit</a></div>
       
 </body>
 

@@ -52,8 +52,14 @@
         }
     }
 
+    @else if $point==desktopMedium {
+        @media screen and (min-width: 1500px) {
+            @content;
+        }
+    }
+
     @else if $point==desktopFull {
-        @media screen and (min-width: 1600px) {
+        @media screen and (min-width: 1800px) {
             @content;
         }
     }

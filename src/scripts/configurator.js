@@ -80,10 +80,25 @@ const firebaseConfig = {
         parameterKey[k] = list[k].parameterKey;
     }
 
+    var groupList = []
     //Go through all parameters and evaluate them
     for (let i = 0; i < parameterKey.length; i++) {
         //Selecting each of the parameters
         let param = parameters[parameterKey[i]];
+        var groupName = param.group.name
+        if (groupList.length == 0){
+            groupList.push(groupName)
+        } else{
+            if (groupList.includes(groupName)){
+                ;
+            } else{
+                const paramcont = document.getElementById("parameterContainer");
+                const divider = document.createElement("div");
+                divider.setAttribute("class", "divider")
+                paramcont.appendChild(divider)
+                groupList.push(groupName)
+            }
+        };
 
         //Later will be the HTML element
         let paramInput = undefined;
@@ -263,6 +278,6 @@ const firebaseConfig = {
             }
             write(id, name, type, value)
         }
-        window.setTimeout(() => {window.location.href = '../thankyou.html'; }, 500);
+        window.setTimeout(() => {window.location.href = '../html/thankyou.html'; }, 500);
     });
 })();
