@@ -7,6 +7,4 @@ toggleMenue?.addEventListener("click", () => {
   infoContainer?.classList.toggle("scroll-lock");
 });
 
-
-
 const fs = require('fs');
