@@ -15,7 +15,6 @@ $canvas-heigt-desktop: 55vh;
 }
 
 //Canvas Style
-
 .canvas-container {
     z-index: 1;
     position: fixed;
@@ -38,7 +37,6 @@ $canvas-heigt-desktop: 55vh;
     }
 }
 
-
 //Style Info container
 #infoContainer {
     z-index: 100;
@@ -48,8 +46,6 @@ $canvas-heigt-desktop: 55vh;
     left: 100vw;
     width: 100vw;
     height: 100vh;
-    // background-color: color(infoContainer);
-    // background-color: color(darkGrey);
     background-color: rgba(29, 29, 29, 0.95);
     transition: .5s;
     text-align: center;
@@ -85,8 +81,9 @@ $canvas-heigt-desktop: 55vh;
             grid-template-columns: 1fr 2fr;
         }
         .label{
+            text-align: left;
             opacity: .4;
-            padding-left: 2em;
+            padding-left: 0em;
         }
         .data{
             text-align: right;
@@ -195,6 +192,7 @@ line {
 .divider{
     height: 2px;
     width: 100%;
+    border-radius: 1px;
     background: black;
     margin: 1em 0;
 }

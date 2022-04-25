@@ -2,13 +2,17 @@
 
 .viewer{
     margin: 2em 0  0 0;
+    overflow-x: hidden;
 }
 
 //canvas styling
 
 #canvas-container {
     width: 100%;
-    height: 55vh;
+    height: 50vh;
+    @include breakpoint(tablet){
+        height: 60vh;
+    }
 }
 
 

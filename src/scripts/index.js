@@ -14,7 +14,7 @@ import {
     get
   } from "firebase/database"
 
-  var shapediverTicket = "3c97709d88a4f2768a3477791134a231261629d2c30c1bf3891a9ba5ffb222a219d440398df6830735b52ea8730d25ca47a46c313f05d77c39e63fc5a35d5eb4d56b9a4735d75eb373dab6d5fa9738453574a7f1bcd5c5eee42e5688cb348fa77a15c4a221cb4d-f7e41cbaba79e6dc66a529c582d355ab";
+  var shapediverTicket = "d0e9de16456004f2cfce0452b009e0bb77eae4f13dd559fd375d9b902c8acff2f483e33fd955a562d9d0bfb19fa22090c2f53de1ff4d3b1ca1f8ba6fe633ad1305f5594aedf75ff7d2f25646cd418f1e137438a81f53d7d5a5abe6a0bf9879e8b4a25588b5c475-4b906f7bd0143be85c8367485b6c2763";
   
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -33,7 +33,19 @@ import {
   const db = getDatabase();
   
   const refrence = ref(db, shapediverTicket)
-  
+
+  // Get the Median Value
+  function median(numbers) {
+    //get the middle value
+    const sorted = numbers.slice().sort((a, b) => a - b);
+    const middle = Math.floor(sorted.length / 2);
+    if (sorted.length % 2 === 0) {
+        return (sorted[middle - 1] + sorted[middle]) / 2;
+    }
+    return sorted[middle];
+
+  }
+
   function convertData(parameters) {
     var keys = [];
     var processedParams = {};
@@ -57,21 +69,19 @@ import {
             valueList.push(val);
           } else {}
         }
-        //HEre i have all the values in an array
+        //Here i have all the values in an array
         if (valueList[0] == "Float") {
           valueList.shift();
-          var l = valueList.length;
-          valueList = valueList.reduce((a, b) => a + b);
-          valueList = valueList / l;
-          valueList = Math.round(valueList * 10) / 10
+          //Get median value Float
+          valueList = Math.round((median(valueList)) * 10) / 10
         } else if (valueList[0] == "Int") {
           valueList.shift();
-          var l = valueList.length;
-          valueList = valueList.reduce((a, b) => a + b);
-          valueList = parseInt(valueList / l);
+          //Get median value Int
+          valueList = parseInt((median(valueList)));
         } else if (valueList[0] == "StringList") {
           valueList.shift();
           const count = {};
+          //Get the most selected Option
           valueList.forEach((element) => {
             count[element] = (count[element] || 0) + 1;
           });

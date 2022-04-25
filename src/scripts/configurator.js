@@ -34,7 +34,7 @@ const firebaseConfig = {
     });
     // create a session
     const session = await api.createSession({
-        ticket: "3c97709d88a4f2768a3477791134a231261629d2c30c1bf3891a9ba5ffb222a219d440398df6830735b52ea8730d25ca47a46c313f05d77c39e63fc5a35d5eb4d56b9a4735d75eb373dab6d5fa9738453574a7f1bcd5c5eee42e5688cb348fa77a15c4a221cb4d-f7e41cbaba79e6dc66a529c582d355ab",
+        ticket: "d0e9de16456004f2cfce0452b009e0bb77eae4f13dd559fd375d9b902c8acff2f483e33fd955a562d9d0bfb19fa22090c2f53de1ff4d3b1ca1f8ba6fe633ad1305f5594aedf75ff7d2f25646cd418f1e137438a81f53d7d5a5abe6a0bf9879e8b4a25588b5c475-4b906f7bd0143be85c8367485b6c2763",
         modelViewUrl: "https://sdeuc1.eu-central-1.shapediver.com",
         id: "mySessionIndex",
         modelName: "Test_Cube",
