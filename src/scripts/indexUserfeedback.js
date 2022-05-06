@@ -14,7 +14,7 @@ import {
     get
   } from "firebase/database"
 
-  var shapediverTicket = "d0e9de16456004f2cfce0452b009e0bb77eae4f13dd559fd375d9b902c8acff2f483e33fd955a562d9d0bfb19fa22090c2f53de1ff4d3b1ca1f8ba6fe633ad1305f5594aedf75ff7d2f25646cd418f1e137438a81f53d7d5a5abe6a0bf9879e8b4a25588b5c475-4b906f7bd0143be85c8367485b6c2763";
+  var shapediverTicket = "893be9b4de753bb224f45f94ee191d0fd254954318b4b4f0fcdc1e4ba03d1787c6cb3f8b258e099a132e459e3f78e7f81813c38235d21db28742f41bd3106e732739e1d4721955f708a25e4b7f99cd02a7e7eaf6191fbf5d3e7f3e0b89395d4851276d79a0fe3e-98483e11d267beb8b6159cee668dc81c";
   
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -43,7 +43,6 @@ import {
         return (sorted[middle - 1] + sorted[middle]) / 2;
     }
     return sorted[middle];
-
   }
 
   function convertData(parameters) {
@@ -100,7 +99,6 @@ import {
     return processedParams
   }
   
-  
   (async () => {
     // create a viewer
     const viewer = await api.createViewer({
@@ -113,7 +111,7 @@ import {
       modelViewUrl: "https://sdeuc1.eu-central-1.shapediver.com",
       id: "mySessionIndex",
     });
-  
+    //Get Data from Database
     get(refrence).then((snapshot) => {
       if (snapshot.exists()) {
         const data = Object.values(snapshot.val())

@@ -1,3 +1,77 @@
 @import "main.scss";
 
+line{
+    stroke: white;
+}
 
+body{
+    overflow-x: hidden;
+}
+.arrow{
+    position: fixed; 
+    left: 1em; 
+    top: 1em;
+    @include breakpoint(tablet){
+        left: 2em;
+        top: 2em;
+    }
+}
+
+img{
+    width: 100%;
+
+    margin: 2em 0 2em;
+    @include breakpoint(tablet){
+        
+        margin: 5em 0 2em;
+        width: 80%; 
+    }
+}
+
+.container{
+    margin-top: 10vh;
+    text-align: center;
+    h1{
+        margin: 1em 0;
+        font-size: 1.8em !important;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+    }
+    h2{
+        margin: 1em 0;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        
+    }
+    h3{
+        font-weight: 100;
+        margin: 1em 0;
+        text-transform: uppercase;
+    }
+    ul{
+        margin-left: 1em;
+    }
+    list-style-position: outside;
+    li{
+        list-style-position: unset;
+    };
+    @include breakpoint(tablet){
+        h1{
+            font-size: 3em;
+        }
+        h2{
+            font-size: 2em;
+        }
+        h3{
+            font-size: 1.6em;
+        }
+        p{
+            font-size: 1.3em;
+            line-height: 1.8em;
+        }
+        li{
+            font-size: 1.3em;
+            line-height: 1.8em;
+        }
+    }
+}

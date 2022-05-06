@@ -1,0 +1,58 @@
+@import "main.scss";
+
+.viewer{
+    margin: 2em 0  0 0;
+    overflow-x: hidden;
+}
+
+//canvas styling
+
+#canvas-container {
+    width: 100%;
+    height: 50vh;
+    @include breakpoint(tablet){
+        height: 60vh;
+    }
+}
+
+
+//Styling decription part
+.description {
+    font-size: 1.2em;
+    opacity: .6;
+    margin: 2em 0 3em;
+    text-align: center;
+    width: 100%;
+    height: auto;
+
+    @include breakpoint(tablet) {
+        margin: 1em 0 5em;
+    }
+}
+
+//Styling button
+.button-container {
+
+    //To customizing button
+
+    .custom {
+        //Button
+        background: color(mokka);
+        color: color(neutralGrey);
+        opacity: 1;
+        transition: 1s;
+
+    }
+
+    //Hovering
+    @include breakpoint(tablet){
+        .custom{
+            opacity: .6;
+            transition: .5s;
+        }
+        .custom:hover {
+            opacity: 1;
+            transition: .5s;
+        }
+    }
+}

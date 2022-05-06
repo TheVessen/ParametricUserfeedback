@@ -75,29 +75,29 @@ $canvas-heigt-desktop: 55vh;
             display: block;
             padding: 4em 2em 2em;
         }
-        div{
-            padding: 1em 1em;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-        }
+
         .label{
-            text-align: left;
+            text-align: center;
             opacity: .4;
-            padding-left: 0em;
+            margin-top: 10px;
+            font-size: 1.2em;
         }
         .data{
-            text-align: right;
-            padding-right: 2em;
+            margin: 2em 2em;
+            background-color: color(darkGrey);
+            border-radius: 2em;
+            margin-top: 1em;
+            overflow: hidden;
         }
+        .status{
+            background-color: orange;
+            height: 20px;
+            transition: .5s;
+        }
+        
         @include breakpoint(desktopMedium) {
-            div{
-                padding: 2em 3em;
-            }
         }
         @include breakpoint(desktopFull) {
-            div{
-                padding: 2em 3em;
-            }
         }
     }
     //Mobile only
@@ -131,7 +131,6 @@ $canvas-heigt-desktop: 55vh;
     }
 }
 
-
 .content {
     margin-top: $canvas-heigt-mobile + 3vh;
     @include breakpoint(tablet) {
@@ -141,10 +140,14 @@ $canvas-heigt-desktop: 55vh;
 
 .parameter-container {
     width: 100%;
+    h3{
+        margin-top: 2em;
+    }
     .params {
         margin: 3em 0;
-        padding: 0 2em;
+        padding: 0 1em;
         display: grid;
+        grid-gap: 1em;
         grid-template-columns: 1fr 2fr;
 
         @include breakpoint(tablet) {
@@ -188,7 +191,6 @@ line {
     }
 }
 
-
 .divider{
     height: 2px;
     width: 100%;
@@ -196,6 +198,8 @@ line {
     background: black;
     margin: 1em 0;
 }
+
+
 
 //For JS toggle
 

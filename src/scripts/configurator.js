@@ -34,10 +34,9 @@ const firebaseConfig = {
     });
     // create a session
     const session = await api.createSession({
-        ticket: "d0e9de16456004f2cfce0452b009e0bb77eae4f13dd559fd375d9b902c8acff2f483e33fd955a562d9d0bfb19fa22090c2f53de1ff4d3b1ca1f8ba6fe633ad1305f5594aedf75ff7d2f25646cd418f1e137438a81f53d7d5a5abe6a0bf9879e8b4a25588b5c475-4b906f7bd0143be85c8367485b6c2763",
+        ticket: "893be9b4de753bb224f45f94ee191d0fd254954318b4b4f0fcdc1e4ba03d1787c6cb3f8b258e099a132e459e3f78e7f81813c38235d21db28742f41bd3106e732739e1d4721955f708a25e4b7f99cd02a7e7eaf6191fbf5d3e7f3e0b89395d4851276d79a0fe3e-98483e11d267beb8b6159cee668dc81c",
         modelViewUrl: "https://sdeuc1.eu-central-1.shapediver.com",
         id: "mySessionIndex",
-        modelName: "Test_Cube",
     });
 
     //Get all parameter from the GH file
@@ -54,6 +53,7 @@ const firebaseConfig = {
         }
     }
 
+    //Get parameter keys
     for (let i = 0; i < parameterKey.length; i++) {
         let param = parameters[parameterKey[i]];
         oderKey.push(param.order)
@@ -70,7 +70,7 @@ const firebaseConfig = {
     //2) sort:
     list.sort(function (a, b) {
         return ((a.oderKey < b.oderKey) ? -1 : ((a.oderKey == b.oderKey) ? 0 : 1));
-        //Sort could be modified to, for example, sort on the age 
+        //Sort could be modified to, for example, sort on the age
         // if the name is the same.
     });
 
@@ -87,16 +87,32 @@ const firebaseConfig = {
         let param = parameters[parameterKey[i]];
         var groupName = param.group.name
         if (groupList.length == 0){
+            //Create divider for HTML
+            const paramcont = document.getElementById("parameterContainer");
+            const labelParams = document.createElement("div");
+            const t = document.createElement("h3")
+            const text = document.createTextNode(groupName)
+            t.appendChild(text)
+            labelParams.appendChild(t)
             groupList.push(groupName)
+            paramcont.appendChild(labelParams)
         } else{
             if (groupList.includes(groupName)){
                 ;
             } else{
                 const paramcont = document.getElementById("parameterContainer");
                 const divider = document.createElement("div");
+                const labelParams = document.createElement("div");
+                const t = document.createElement("h3")
+                const text = document.createTextNode(groupName)
+                t.appendChild(text)
+                labelParams.appendChild(t)
+                groupList.push(groupName)
+                //Add label
                 divider.setAttribute("class", "divider")
                 paramcont.appendChild(divider)
                 groupList.push(groupName)
+                paramcont.appendChild(labelParams)
             }
         };
 
@@ -106,7 +122,7 @@ const firebaseConfig = {
         //Will get the resondinng HTML lable
         let label = document.createElement("label");
         label.setAttribute("for", param.id);
-        label.innerHTML = param.name;
+        label.textContent = param.name;
 
         //checking for the type and creating the responding HTML element
         //Check if slider
@@ -129,7 +145,7 @@ const firebaseConfig = {
             } else if (param.type == "Even" || param.type == "Odd") {
                 paramInput.setAttribute("step", 2);
             } else if (param.type == "Float") {
-                paramInput.setAttribute("step", 0.1);
+                paramInput.setAttribute("step", 0.01);
             }
             //Check if color
         } else if (param.type == "Color") {
@@ -144,7 +160,7 @@ const firebaseConfig = {
                 let option = document.createElement("option");
                 option.setAttribute("value", j);
                 option.setAttribute("name", param.choices[j]);
-                option.innerHTML = param.choices[j];
+                option.textContent = param.choices[j];
                 if (param.value == j) option.setAttribute("selected", "");
                 paramInput.appendChild(option);
             }
@@ -190,6 +206,7 @@ const firebaseConfig = {
         }
     }
 
+
     //get Session outputs and display
     for (let i = 0; i < sesstionOutKeys.length; i++) {
         var outs = sessionOutput[sesstionOutKeys[i]].content[0];
@@ -198,49 +215,54 @@ const firebaseConfig = {
         if (typeof outs != "undefined") {
             if (outs.format == "data") {
                 //Round output
-                var date = Math.round(outs.data * 10) / 10
+                const statusVal = Math.round(outs.data * 100) / 100;
                 outsLabel = document.createTextNode(outs.name.toString());
-                outData = document.createTextNode(date.toString());
                 const label = document.createElement("p");
                 label.setAttribute("class", "label");
                 label.appendChild(outsLabel);
-
-                const par = document.createElement("p");
-                par.setAttribute("class", "data");
-                par.setAttribute("id", outs.name);
-                par.appendChild(outData);
-
+                //Create Lable Content
                 const infoContent = document.getElementById("infoContentContainer");
-                const outcontainer = document.createElement("div");
-                outcontainer.appendChild(label);
-                outcontainer.appendChild(par);
-                infoContent.appendChild(outcontainer);
+                const lableContainer = document.createElement("div");
+                lableContainer.appendChild(label);
+                infoContent.appendChild(lableContainer);
+                const data = document.createElement("p");
+                const dataCont = document.createElement("div");
+                dataCont.setAttribute("class", "data")
+                const dataStatus = document.createElement("div");
+                dataStatus.setAttribute("id", outs.name)
+                dataStatus.setAttribute("class", "status")
+                dataStatus.style.width = statusVal*100 + "%";
+                dataCont.appendChild(dataStatus)
+                infoContent.appendChild(dataCont)
             }
         }
     }
-
+    
+    
     // Update;
     api.addListener(EVENTTYPE.SESSION.SESSION_CUSTOMIZED, (e) => {
         console.log(e);
-
+        
         var sessionOutputUpdate = session.outputs;
         var sesstionOutKeysUpdate = [];
-
+        
         //getting the key for all outputs
         for (var key in sessionOutputUpdate) {
             if (Object.prototype.hasOwnProperty.call(sessionOutputUpdate, key)) {
                 sesstionOutKeysUpdate.push(key);
             }
         }
-
+        
         for (let i = 0; i < sesstionOutKeys.length; i++) {
             var outs = sessionOutputUpdate[sesstionOutKeysUpdate[i]].content[0];
             if (typeof outs != "undefined") {
                 if (outs.format == "data") {
-                    var date = Math.round(outs.data * 10) / 10;
+                    data = outs.data*100
+                    var data = Math.round(data);
                     //Rounding outputs
-                    document.getElementById(outs.name).innerHTML = date;
-                    var a = document.getElementById(outs.name);
+                    var element = document.getElementById(outs.name)
+                    element.style.width = data + "%"
+
                 }
             }
         }
@@ -250,34 +272,36 @@ const firebaseConfig = {
     const submit = document.getElementById("submit");
     //Parameters to submit to DB
     const Dbparameters = [];
-
+    
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getDatabase();
 
-
     //Submit Data
     submit.addEventListener("click", function (e) {
         e.preventDefault();
+        const reference = ref(db, session.ticket)
+        var datas = {}
+        var dataval = []
         for (let i = 0; i < parameterKey.length; i++) {
             //Selecting each of the parameters
             let param = parameters[parameterKey[i]];
-            const reference = ref(db, session.ticket)
             var id = param.id;
             var name = param.name;
             var type = param.type;
             var value = param.value;
-
-            function write(id, name, type, value) {
-                push(reference, {
-                    id: id,
-                    name: name,
-                    type: type,
-                    value: value
-                });
-            }
-            write(id, name, type, value)
+        
+            id = name.replace(" ", "");
+            datas[id] = value
+        
         }
+        function write(datas) {
+            push(reference, datas);
+        };
+        write(datas)
         window.setTimeout(() => {window.location.href = '../html/thankyou.html'; }, 500);
     });
 })();
+
+
+
