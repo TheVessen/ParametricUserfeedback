@@ -14,19 +14,20 @@ import {
     get
   } from "firebase/database"
 
-  var shapediverTicket = "893be9b4de753bb224f45f94ee191d0fd254954318b4b4f0fcdc1e4ba03d1787c6cb3f8b258e099a132e459e3f78e7f81813c38235d21db28742f41bd3106e732739e1d4721955f708a25e4b7f99cd02a7e7eaf6191fbf5d3e7f3e0b89395d4851276d79a0fe3e-98483e11d267beb8b6159cee668dc81c";
+  var shapediverTicket = process.env.ShapediverKey;
   
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  //Replace the "process.env...." with your own API 
   const firebaseConfig = {
-    apiKey: "AIzaSyDWH9hQgvCs8sNilPPqFv4J2tlbs62tgjw",
-    authDomain: "designcolab-1917d.firebaseapp.com",
-    databaseURL: "https://designcolab-1917d-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "designcolab-1917d",
-    storageBucket: "designcolab-1917d.appspot.com",
-    messagingSenderId: "929002738141",
-    appId: "1:929002738141:web:60deb9e461a512782ca634",
-    measurementId: "G-C0Y34DJ5MK"
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.storageBucketmessagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId,
   };
   
   const app = initializeApp(firebaseConfig);
@@ -111,28 +112,11 @@ import {
       modelViewUrl: "https://sdeuc1.eu-central-1.shapediver.com",
       id: "mySessionIndex",
     });
-    //Get Data from Database
-    get(refrence).then((snapshot) => {
-      if (snapshot.exists()) {
-        const data = Object.values(snapshot.val())
-        const convertedData = convertData(data)
-        const keys = Object.keys(convertedData)
-        const values = Object.values(convertedData)
-        for (let i = 0; i < keys.length; i++) {
-          var param = session.getParameterById(keys[i])
-          param.value = values[i]
-          session.commitParameters;
-          session.customize();
-        }
-      } else {
-        console.log("No data available");
-      }
-    }).catch((error) => {
-      console.error(error);
-    });
     api.addListener(EVENTTYPE.SESSION.SESSION_CUSTOMIZED, (e) => {
       console.log(e);
     });
   
     await session.customize();
   })();
+
+

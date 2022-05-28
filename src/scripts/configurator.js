@@ -13,18 +13,34 @@ import {
     push
 } from "firebase/database"
 
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyDWH9hQgvCs8sNilPPqFv4J2tlbs62tgjw",
-    authDomain: "designcolab-1917d.firebaseapp.com",
-    databaseURL: "https://designcolab-1917d-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "designcolab-1917d",
-    storageBucket: "designcolab-1917d.appspot.com",
-    messagingSenderId: "929002738141",
-    appId: "1:929002738141:web:60deb9e461a512782ca634",
-    measurementId: "G-C0Y34DJ5MK"
-};
+// const firebaseConfig = {
+//     apiKey: "AIzaSyDWH9hQgvCs8sNilPPqFv4J2tlbs62tgjw",
+//     authDomain: "designcolab-1917d.firebaseapp.com",
+//     databaseURL: "https://designcolab-1917d-default-rtdb.europe-west1.firebasedatabase.app",
+//     projectId: "designcolab-1917d",
+//     storageBucket: "designcolab-1917d.appspot.com",
+//     messagingSenderId: "929002738141",
+//     appId: "1:929002738141:web:60deb9e461a512782ca634",
+//     measurementId: "G-C0Y34DJ5MK"
+// };
+
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  //Replace the "process.env...." with your own API 
+  const firebaseConfig = {
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.storageBucketmessagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId,
+  };
 
 (async () => {
     // create a viewer
@@ -34,7 +50,7 @@ const firebaseConfig = {
     });
     // create a session
     const session = await api.createSession({
-        ticket: "893be9b4de753bb224f45f94ee191d0fd254954318b4b4f0fcdc1e4ba03d1787c6cb3f8b258e099a132e459e3f78e7f81813c38235d21db28742f41bd3106e732739e1d4721955f708a25e4b7f99cd02a7e7eaf6191fbf5d3e7f3e0b89395d4851276d79a0fe3e-98483e11d267beb8b6159cee668dc81c",
+        ticket: process.env.ShapediverKey,
         modelViewUrl: "https://sdeuc1.eu-central-1.shapediver.com",
         id: "mySessionIndex",
     });
@@ -132,12 +148,15 @@ const firebaseConfig = {
             param.type == "Even" ||
             param.type == "Odd"
         ) {
+
             paramInput = document.createElement("input");
             paramInput.setAttribute("id", param.id);
             paramInput.setAttribute("type", "range");
             paramInput.setAttribute("min", param.min);
             paramInput.setAttribute("max", param.max);
-            paramInput.setAttribute("value", param.value);
+            paramInput.setAttribute("value", param.value)
+            
+            //Set mid value
 
             //Set the slider step size
             if (param.type == "Int") {
@@ -206,7 +225,6 @@ const firebaseConfig = {
         }
     }
 
-
     //get Session outputs and display
     for (let i = 0; i < sesstionOutKeys.length; i++) {
         var outs = sessionOutput[sesstionOutKeys[i]].content[0];
@@ -238,7 +256,6 @@ const firebaseConfig = {
         }
     }
     
-    
     // Update;
     api.addListener(EVENTTYPE.SESSION.SESSION_CUSTOMIZED, (e) => {
         console.log(e);
@@ -262,7 +279,6 @@ const firebaseConfig = {
                     //Rounding outputs
                     var element = document.getElementById(outs.name)
                     element.style.width = data + "%"
-
                 }
             }
         }
@@ -290,7 +306,6 @@ const firebaseConfig = {
             var name = param.name;
             var type = param.type;
             var value = param.value;
-        
             id = name.replace(" ", "");
             datas[id] = value
         

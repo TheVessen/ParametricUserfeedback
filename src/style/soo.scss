@@ -1,0 +1,21 @@
+@import "main.scss";
+
+
+
+.container-btn {
+    height: 48vh;
+}
+
+.btnmoo{
+    opacity: .2;
+    background-color: grey;
+    border-radius: 0 2em 2em 0;
+}
+.btnsoo{
+    border-radius: 2em 0  0 2em;
+    background-color: color(act2);
+}
+
+.btnmoo:hover{
+    opacity: .8;
+}

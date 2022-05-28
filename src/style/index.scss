@@ -1,63 +1,130 @@
 @import "main.scss";
 
 body {
-    background-image: url(../IMG/TitleImage_01.jpg);
-    background-size: cover;
-    height: 100vh;
-    overflow: hidden;
-    background-position: center;
-}
-
-.view {
-    background-color: rgba(0, 0, 0, 0.48);
-}
-
-h1 {
-    font-weight: 200;
-}
-
-.content {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     text-align: center;
+    // overflow: hidden;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
 }
 
-.tools {
-    font-size: 2em;
-    letter-spacing: .1em;
+.title{
+ margin: 5vh 0;
+ @include breakpoint(tablet){
+     font-size: 4em;
+
+
+ }
+}
+
+.container {
+    height:60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 2em;
+    margin-bottom: 6vh;
 
     @include breakpoint(tablet) {
-        opacity: .6;
-        transition: .6s;
-
+        justify-content: space-around;
+        flex-direction: row;
+        padding: 20vh 5vw 4vh;
     }
-}
 
-@include breakpoint(tablet) {
+    a {
+        overflow: hidden;
+        border-radius: 5px;
+        // backdrop-filter: blur(10px);
+        //Placeholder Color
+        background-color: rgba(85, 83, 83, 0.5);
+        height: 80%;
+        width: 80vw;
+    
+        @include breakpoint(tablet) {
+            height: 60vh;
+    
+        }
 
+        .tools {
+            //Shadecolor
+            backdrop-filter: blur(2px);
+            // background-color: rgba(216, 216, 216, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: .6em;
+            letter-spacing: .1em;
+            height: 100%;
+            width: 100%;
+            h1, strong {
+                color: white;
+            }
+
+            h1,{
+                font-weight: 200;
+                color: white;
+            }
+            
+            @include breakpoint(tablet) {
+            backdrop-filter: blur(0px);
+
+                opacity: 1;
+                transition: .6s;
+                
+                font-size: .8em;
+
+            }
+        }
+    }
     a:hover {
-
         .tools {
             opacity: 1;
             transition: .6s;
+            background-color: #3a3937b0;
+            box-shadow: black 20px 20px 10px ;
+            backdrop-filter: blur(6px);
         }
     }
 }
 
-a {
-    border-radius: 5px;
-    backdrop-filter: blur(10px);
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    padding: 10vh 0;
 
-    @include breakpoint(tablet) {
-        width: 60%;
+.t1{
+    background-position: center;
+    background-size: cover;
+    background-image: url(../img/Cover-t1.jpg);
+}
+
+.t2{
+    background-position: center;
+    background-size: cover;
+    background-image: url(../img/Cover_t2.jpg);
+}
+
+
+@include breakpoint(tablet){
+    .button-container{
+    }
+
+    .about{
+        margin-top: 1em;
+    }
+}
+
+
+.about {
+    border: solid 2px color(mokka);
+}
+
+
+@include breakpoint(tablet) {
+    .about {
+        opacity: 1;
+    }
+
+    .about:hover {
+        background-color: color(mokka);
+        color: color(neutralGrey);
     }
 }

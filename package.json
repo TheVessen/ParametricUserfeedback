@@ -2,8 +2,21 @@
   "source": "src/index.html",
   "scripts": {
     "dev": "parcel",
-    "prod": "parcel build "
+    "prod": "parcel build --dist-dir public"
   },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "static-dev",
+        "env": "dev"
+      },
+      {
+        "staticPath": "static-prod",
+        "env": "prod"
+      }
+    ]
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,12 +27,16 @@
     "os-browserify": "^0.3.0",
     "parcel": "^2.4.1",
     "path-browserify": "^1.0.1",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "parcel-bundler": "^1.6.1"
+
   },
   "dependencies": {
     "@shapediver/viewer": "^1.14.0",
     "@shapediver/viewer.features.interaction": "^1.14.1",
-    "dotenv": "^16.0.0",
-    "firebase": "^9.6.11"
+    "dotenv": "^16.0.1",
+    "firebase": "^9.6.11",
+    "three": "^0.140.2",
+    "parcel-plugin-static-files-copy": "2.6.0"
   }
 }

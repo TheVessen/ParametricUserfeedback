@@ -35,3 +35,18 @@
         font-weight: 800;
     }
 }
+.about {
+    border: solid 2px color(act1);
+}
+
+
+@include breakpoint(tablet) {
+    .about {
+        opacity: 1;
+    }
+
+    .about:hover {
+        background-color: color(act1);
+        color: color(neutralGrey);
+    }
+}

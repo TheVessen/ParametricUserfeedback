@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
 
 
 @mixin breakpoint($point) {
@@ -70,18 +71,21 @@
 $colors: ( //main colors
     white: #ffff,
     sand:#bfb7a4,
-    sand-dark: darken(#bfb7a4ce, 20%),
     mokka: #bfb7a4,
-    neutralGrey:#28282a,
-    darkGrey: #171817,
+    // neutralGrey:#28282a,
+    neutralGrey:#fcfcfc,
+    darkMain: #66615a,
+    // darkMain: #85817c,
+    darkGrey: #a4a5a4,
     olives: #a2a398,
     puncyGreen: #71a456,
     btn1: #965555,
-    btn1Hover: #965555,
+    btn1Hover: #e07f7f,
     btn2: #3c8897,
     btn2Hover: #3c8897,
     btnAbout: #545454,
-    btnAboutHover: #cb4a4a,
+    act1: #4692f0,
+    act2: #ff4858,
     infoContainer: #575757,
     boderColor: rgba(126, 126, 126, 0.5));
 
@@ -100,15 +104,32 @@ $margin-desktop: 25vw;
     margin: 0;
     padding: 0;
     text-decoration: none;
-    color: #d8d8d8;
+    color: #1a1a1a;
     -webkit-tap-highlight-color: transparent;
 }
 
 body {
     height: auto;
-    width: 100vw;
-    font-family: 'Open Sans', sans-serif;
+    // width: 100vw;
+    font-family: 'Roboto Flex', sans-serif;
     background-color: color(neutralGrey);
+}
+
+h1{
+    font-size: 2em;
+    @include breakpoint(tablet){
+        font-size: 2.8em;
+    }
+}
+h2{
+    font-size: 2.2em;
+}
+h3{
+    font-size: 2em;
+}
+
+p{
+    letter-spacing: .08em;
 }
 
 .content {
@@ -139,6 +160,7 @@ body {
     letter-spacing: .2em;
     text-transform: uppercase;
     transition: .5s;
+    color: black !important;
 
     @include breakpoint(tablet) {
         font-size: 1.1em;
@@ -165,22 +187,33 @@ input[type="range"] {
     width: 100%;
     height: $sliderheightmobile;
     border-radius: $sliderheightmobile;
-    background: color(darkGrey);
+    background: color(mokka);
     cursor: pointer;
     opacity: .7;
     transition: .2s;
     border: none;
-    // border: 2px solid color(boderColor);
-    box-shadow: inset 2px 2px 3px #0000003f;
+    box-shadow: inset 2px 2px 3px #00000021;
+    color: #000000 !important;
 }
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background-color: #ffffff;
+    background-color: #242424;
     height: $sliderheightmobile +.5em;
     width: $sliderheightmobile +.5em;
     border-radius: 50%;
+}
+
+
+input[type="range"]::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #242424;
+    height: $sliderheightmobile +.5em;
+    width: $sliderheightmobile +.5em;
+    border-radius: 50%;
+    border: 0px;
 }
 
 input[type="range"]:hover {
@@ -202,13 +235,15 @@ input[type="color"]::-webkit-color-swatch {
     // border: 2px solid color(boderColor);
 }
 
+
 select {
     text-align: center;
     height: 2em;
-    background: #131414;
+    background: color(mokka);
     border-radius: 4em;
     border: none;
-    opacity: .6;
+    opacity: .8;
+    color: black;
     // border: 2px solid color(boderColor);
 }
 
@@ -221,39 +256,51 @@ select:hover {
     opacity: 1;
 }
 
-.about {
-    color: color(mokka);
-    border: solid 2px color(mokka);
-}
 
-@include breakpoint(tablet) {
-    .about {
-        opacity: .5;
-    }
-
-    .about:hover {
-        opacity: 1;
-        background-color: color(mokka);
-        color: color(neutralGrey);
-    }
-}
 
 line {
-    stroke: color(darkGrey);
+    stroke:rgb(27, 27, 27) !important;
 
     @include breakpoint(tablet) {
-        stroke: beige;
+        stroke: rgb(41, 41, 41) ;
     }
+}
+
+
+
+svg {
+    transform: scale(1.5) !important;
 }
 
 @include breakpoint(tablet) {
     svg {
         opacity: .3;
         transition: .6s;
+        transform: scale(2) !important;
+
     }
 
     svg:hover {
         opacity: 1;
         transition: .6s;
+    }
+}
+
+.title {
+    text-align: center;
+    margin: 1em 0;
+    opacity: .8;
+    font-weight: 500;
+
+    @include breakpoint(tablet) {
+        margin: 0;
+        padding: 0;
+        top: 5vh;
+        color: black;
+        position: fixed;
+        left: 2em;
+        width: 18vw;
+        opacity: .5;
+        text-align: left;
     }
 }

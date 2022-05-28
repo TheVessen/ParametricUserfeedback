@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/moo.scss">
+    <link rel="stylesheet" href="../style/genMain.scss">
+    <script src="../scripts/toggle_gend.js" type="module"></script>
+    <script src="../scripts/replace_stats.js" type="module"></script>
+    <title>Multi Objective Optimization</title>
+</head>
+
+<body>
+    <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: rgb(245, 245, 245);"
+            href="../index.html">
+            <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414"
+                viewBox="0 0 19.207 11.414">
+                <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+            </svg>
+        </a></div>
+    <div class="content">
+        <div class="c-title">
+            <h1 class="title">Formfindung mit <strong style="color: black;"> Generativem Design </strong> <br><strong
+                    style="font-weight: 300 ; color: black; font-size : .7emem;">Kopfhörer gehäuse</strong></h1>
+        </div>
+        <div class="sub-title"></div>
+        <div class="container">
+            <div class="img-canvas"><img id="img-canvas" src="../img/Moo_0.png" alt=""></div>
+        </div>
+        <p id="ind" style="color: black;">Bewege den Slider</p>
+        <input id="slider" type="range" min="0" max="69" step="1" value="35">
+    </div>
+    <div class="change-alg">
+        <a href="soo.html" class="btnsoo">Single Objective Optimization</a>
+        <a href="moo.html" class="btnmoo">Multi Objective Optimization</a>
+    </div>
+    <p style="color: black; font-size: 1em; text-align: center; margin: 1em 0 2em; opacity: .6;">Wähle den
+        Optimisierungs Algotythmus</p>
+    <div class="sidebar">
+        <h3 style="text-align: center;">Infos</h3>
+        <div class="container-title">
+            <div class="krit-tit"> Fitness</div>
+            <div class="val-tit" style="text-align:right ;">Value</div>
+        </div>
+        <div class="container-k">
+            <p>Symmetry</p>
+            <p id="sym" class="val"></p>
+            <p>Complexity</p>
+            <p id="comp" class="val"></p>
+            <p>EarFit</p>
+            <p id="fit" class="val"></p>
+            <p>Material Use</p>
+            <p id="matUse" class="val"></p>
+        </div>
+        <div class="img-container">
+            <img id="stat-img" src="../img/dg_ind_.0.png" alt="">
+        </div>
+        <div class="container-btn">
+            <div class="btn" id="info-toggle"
+                style="border: solid 2px #e07f7f; color: white !important; cursor: pointer;">Mehr</div>
+        </div>
+    </div>
+    <div class="extra-info">
+    </div>
+    <div class="extra-info">
+    </div>
+    <div class="unfixed" id="unfixed">
+        <div class="u-content">
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+            <p>some text</p>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -6,14 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/about.scss">
-    <link rel="icon" href="../IMG/TabIcon_1.svg">
+    <link rel="icon" href="../img/TabIcon_1.svg">
 
     <title>About</title>
+    <script>
+        var timerId = 0
+    
+        document.addEventListener("mousemove", function () {
+          clearTimeout(timerId);
+          timerId = setTimeout(function () {
+            window.location.href = '../index.html';
+          }, 20000);
+        });
+      </script>
 </head>
 
 <body>
-    <div class="arrow" style="">
-        <a style="color: rgb(255, 255, 255);" href="../index.html">
+    <div class="arrow">
+        <a style="color: rgb(51, 51, 51);" href="../index.html">
             <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414"
                 viewBox="0 0 19.207 11.414">
                 <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
