@@ -19,3 +19,14 @@
 .btnmoo:hover{
     opacity: .8;
 }
+
+.schema{
+    padding-top: 5vh;
+    height: 90vh;
+    img{
+        object-position: left;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}

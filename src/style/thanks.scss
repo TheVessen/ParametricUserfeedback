@@ -11,7 +11,7 @@
     }
     .back:hover{
         opacity: 1;
-        border: 2px solid color(mokka);
+        border: 2px solid color(act1);
     }
 }
 
@@ -36,7 +36,7 @@
     }
 }
 .about {
-    border: solid 2px color(act1);
+    border: solid 2px color(act1) !important;
 }
 
 
@@ -46,7 +46,22 @@
     }
 
     .about:hover {
-        background-color: color(act1);
-        color: color(neutralGrey);
+        background-color: color(act1) !important;
+        color: color(white) !important;
+    }
+}
+
+.auswertung{
+    background-color: color(act1);
+    color: white !important;
+    width: 20rem;
+}
+
+@include breakpoint(tablet){
+    .auswertung{
+        opacity: .6;
+    }
+    .auswertung:hover{
+        opacity: 1;
     }
 }

@@ -1,0 +1,41 @@
+@import "main.scss";
+
+::-webkit-scrollbar-thumb {
+    background: color(act1);
+    border-radius: 10px;
+}
+
+.landing {
+    background-image: url(../img/covers/Cover_t1N.jpg);
+}
+
+h3{
+padding-top: 5rem;
+
+}
+
+@include breakpoint(tablet){
+    h3 {
+        padding-top: 30rem;
+    
+    }
+}
+
+.cta1{
+    border: solid 2px color(act1);
+
+}
+
+.cta2:hover {
+    opacity: 1;
+}
+
+.about-t1 {
+    border: 2px solid color(act1);
+}
+
+.about-t1:hover {
+    opacity: 1;
+}
+
+

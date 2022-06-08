@@ -1,0 +1,149 @@
+@import "main.scss";
+
+body{
+    overflow-x: hidden;
+}
+
+
+.landing{
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    @include breakpoint(tablet){
+        padding: 10vh 15rem 0;
+
+    }
+}
+
+
+
+h3 {
+    color: color(sorfGrey);
+    font-size: 1.4em !important;
+    font-weight: 500;
+    text-align: center;
+    @include breakpoint(tablet){
+        font-size: 2em !important;
+
+    }
+
+}
+
+
+.cta1{
+    width: 14rem;
+    margin: 0rem 0;
+    border: solid 2px color(act2);
+    text-align: center;
+    opacity: .5;
+    @include breakpoint(tablet){
+
+        width: 16rem !important;
+    }
+}
+
+.cta1:hover {
+    opacity: 1;
+}
+
+.cta2 {
+    background-color: color(act1);
+    text-align: center;
+    width: 16rem !important;
+    opacity: .5;
+    color: white !important;
+    margin: 4em 0 0;
+    @include breakpoint(tablet){
+
+        margin: 10rem 0 0;
+    }
+
+}
+
+.about-t1 {
+    margin-top: 3rem;
+    width: 16rem !important;
+    opacity: .6;
+    margin-bottom: 5rem;
+}
+
+.info {
+
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+article {
+    margin-top: 20vh;
+    width: 90%;
+    @include breakpoint(tablet){
+
+        width: 45%;
+    }
+
+    p {
+        color: color(sorfGrey);
+        font-weight: 500;
+        font-size: 1.5em;
+        text-align: center;
+        font-weight: 300;
+        @include breakpoint(tablet){
+            font-size: 2.5em;
+            
+        }
+    }
+}
+
+ul {
+    margin-top: 2vh;
+    
+    li {
+        
+        margin: 2em 0;
+        color: color(sorfGrey);
+        font-size: 1.2em;
+        font-weight: 500;
+        text-align: center;
+    } 
+    
+    @include breakpoint(tablet){
+        margin-top: 10vh;
+        
+        li{
+            font-size: 1.4em;
+        }
+    }
+}
+
+.end {
+    margin-top: 4vh;
+    font-size: 1.4em;
+    @include breakpoint(tablet){
+        
+        margin-top: 10vh;
+    }
+}
+
+
+@include breakpoint(mobile){
+    .title{
+        margin: 0 !important;
+        padding: 5rem 0 !important;
+    }
+
+}

@@ -3,7 +3,7 @@
 
 
 .container-btn {
-    height: 15vh;
+    height: 7vh;
 }
 
 
@@ -33,4 +33,50 @@
 
 .btnsoo:hover{
     opacity: .8;
+}
+
+.u-content{
+}
+
+.schema{
+    padding-top: 5vh;
+    height: 90vh;
+    img{
+        object-position: left;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.container-btn2{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+}
+
+.next{
+    background-color: color(act2);
+    color: white !important;
+    @include breakpoint(tablet){
+        opacity: .6;
+    }
+}
+
+.next:hover{
+    opacity: 1;
+}
+
+.about{
+    border: solid 2px color(act2);
+}
+
+@include breakpoint(tablet){
+    .about{
+        opacity: .6;
+    }
+    .about:hover{
+        opacity: 1;
+    }
 }

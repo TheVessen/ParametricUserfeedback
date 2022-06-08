@@ -85,3 +85,13 @@ line {
         }
     }
 }
+
+.arrow {
+    height: 1.4rem;
+    position: absolute;
+    opacity: 0.8;
+    bottom: 5vh;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-left: -7px;
+}

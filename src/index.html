@@ -7,26 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/TabIcon_1.svg">
     <link rel="stylesheet" href="style/index.scss">
+    <link rel="stylesheet" href="style/fontawesome-free/css/all.min.css">
     <script src="scripts/index.js" type="module"></script>
     <title>Home</title>
+    <script type="module">
+        window.smoothScroll = function (target) {
+    var scrollContainer = target;
+    scrollContainer.scrollIntoView({ 
+        behavior: 'smooth' })
+}
+
+    </script>
 </head>
 
-<body>
-    <div class="view">
-        <h1 class="title">DesignNode</h1>
-        <div class="container">
+<body id="top">
+
+    <i class="fas fa-arrow-alt-circle-up" id="arrow" type="button"
+    onclick="smoothScroll(document.getElementById('top'))"></i></i>
+    <div class="view" style="padding-bottom: 5vh ;">
+        <div class="landing">
+            <div class="content">
+                <h1>Eine neue Generation an <br> digitalen Designtools?</h1>
+                <p>DesignNode zeigt anhand zweier Tool Prototypen, wie Computational Design in der Zukunft im
+                    Industrial Design genutzt werden könnte, um Designer:innen im Designprozess zu unterstützen.</p>
+            </div>
+            <div class="arrow-container">
+                <div class="btn scrollTo" onclick="smoothScroll(document.getElementById('next'))">Zu den Tools</div>
+
+            </div>
+        </div>
+        <div class="container" id="next">
             <a href="html/userfeedback.html" class="t1">
                 <div class="tools ">
                     <h1>User Feedback durch <br> <strong>Parametrisches Design</strong> </h1>
                 </div>
             </a>
-            <a href="html/soo.html" class="t2">
+            <a href="html/landing-tool2.html" class="t2">
                 <div class="tools">
-                    <h1>Formfindung durch <br> <strong>Generatives Design</strong> </h1>
+                    <h1>Formfindung durch <br><strong>Generatives Design</strong> </h1>
                 </div>
             </a>
         </div>
-        <div class="button-container"><a class="about btn" href="#">About</a></div>
     </div>
 
 </body>

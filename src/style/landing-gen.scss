@@ -1,0 +1,69 @@
+@import "main.scss";
+
+
+::-webkit-scrollbar-thumb {
+    background: color(act2);
+    border-radius: 10px;
+}
+
+.landing {
+    background-image: url(../img/covers/Cover_t2N.jpg);
+}
+
+h3 {
+    padding-top: 5rem;
+}
+
+
+
+.cta1 {
+    border: solid 2px color(act2);
+}
+
+
+.cta2 {
+    background-color: color(act2);
+
+}
+
+.cta2:hover {
+    opacity: 1;
+}
+
+.about-t1 {
+    border: 2px solid color(act2);
+}
+
+
+.stats{
+    display: none;
+}
+
+
+@include breakpoint(tablet) {
+    h3 {
+        padding-top: 22rem;
+
+    }
+
+    //Diagramm Styling
+
+    .stats {
+        display: block;
+        position: absolute;
+        top: 60vh;
+        right: 10rem;
+        height: 30vh;
+        width: 30vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+    .about-t1:hover {
+        opacity: 1;
+    }
+}

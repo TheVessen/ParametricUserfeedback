@@ -8,7 +8,7 @@ var slider = document.getElementById("slider").oninput = function () {
     var path = "dg_ind_." + ind + ".png"
     document.getElementById("stat-img").src = path
     document.getElementById("img-canvas").src = "Moo_" + ind + ".jpg"
-    document.getElementById("ind").textContent = "Individum " + ind
+    document.getElementById("ind").textContent = "Designvariante " + ind
     var jsonind = "ind_" + ind
     document.getElementById("sym").textContent = data[jsonind][0]
     document.getElementById("comp").textContent = data[jsonind][1]

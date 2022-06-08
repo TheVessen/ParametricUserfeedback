@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/about.scss">
+    <link rel="icon" href="../img/TabIcon_1.svg">
+
+    <title>About Generatives Design</title>
+    <script>
+        var timerId = 0
+    
+        document.addEventListener("mousemove", function () {
+          clearTimeout(timerId);
+          timerId = setTimeout(function () {
+            window.location.href = '../index.html';
+          }, 120000);
+        });s
+      </script>
+</head>
+
+<body>
+    <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: black;"
+            href="../html/moo.html">
+            <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414"
+                viewBox="0 0 19.207 11.414">
+                <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+            </svg>
+        </a>
+    </div>
+    <div class="content-about">
+        <!-- Tool 2 -->
+        <h1 style="text-align: center;">Formfindung durch Generatives Design</h1>
+
+        <section class="t2">
+            <div class="container-1 gt2r">
+                <img src="../img/schema/schema_2.svg" alt="">
+            </div>
+            <div class="container-2 gt2l">
+                <ol>
+                    <li>Erarbeiten eines Lastenheft/Pflichtenheft, bei welchem der genaue Rahmen des Designs
+                        festgehalten wird</li>
+                    <li>In einem Parametrischen Basismodell wird der Rahmen des Lasten-, Pflichtenhefts umgesetzt. Zudem
+                        werden die Designziele und Designeinschränkungen in das Parametrische Basismodell übersetzt,
+                        damit der Algorithmus überprüfen kann, wie gut sich verschiedene Designvarianten eignen</li>
+                    <li>Sobald der Algorithmus eine Designvariante generiert hat, muss diese durch sogenannte
+                        Fitnessfunktionen ausgewertet werden. Die Fitnessfunktionen generieren einen numerischen Wert,
+                        welcher beschreibt, wie gut eine Designvariante die Designziele erfüllt 
+                    </li>
+                    <li>Der Generative Algorithmus hat zwei Aufgaben, zum einen verändert er die Parameter automatisch,
+                        und zum anderen evaluiert er die generierten Designvarianten. Nach einigen Iterationen findet
+                        der Algorithmus heraus, wie er die Parameter des Basismodells verändern muss, um eine bessere
+                        Designvariante zu generieren</li>
+                    <li>Nach dem automatisierten Prozess werden alle Designvarianten wieder an die Designer:in
+                        übergeben. Diese Varianten können dann ausgewertet werden und als Basis für den weiteren
+                        Designprozess dienen </li>
+                    <div class="process">
+                        <img src="../img/schema/prozess_2.svg" alt="">
+                    </div>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

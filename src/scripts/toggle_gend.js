@@ -12,10 +12,10 @@ btn.addEventListener("click", function () {
     unfixed.classList.toggle("show")
     content.classList.toggle("show2")
 
-    if (btn.innerHTML === "Mehr") {
-        btn.textContent = "Wehniger"
+    if (btn.innerHTML === "Aufbau Algorithmus") {
+        btn.textContent = "Zurück"
     } else {
-        btn.textContent = "Mehr"
+        btn.textContent = "Aufbau Algorithmus"
     }
 })
 
@@ -28,8 +28,8 @@ scrollContainer.addEventListener("wheel", (evt) => {
     pos += (scroll *-1) / 100 *2
     if (pos > 0) {
         pos = 0
-    } else if( pos < -60){
-        pos = -60
+    } else if( pos < -80){
+        pos = -80
     }
     document.querySelector(".unfixed").style.transform = "translate(" + pos + "%, 0%)"
 }, { passive: false });

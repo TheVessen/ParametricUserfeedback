@@ -10,14 +10,14 @@
   <script src="../scripts/siteMechanics.js" type="module"></script>
   <link rel="icon" href="../img/TabIcon_1.svg">
   <script>
-    // var timerId = 0
+    var timerId = 0
 
-    // document.addEventListener("mousemove", function () {
-    //   clearTimeout(timerId);
-    //   timerId = setTimeout(function () {
-    //     window.location.href = '../index.html';
-    //   }, 20000);
-    // });s
+    document.addEventListener("mousemove", function () {
+      clearTimeout(timerId);
+      timerId = setTimeout(function () {
+        window.location.href = '../index.html';
+      }, 120000);
+    });s
   </script>
 
 </head>
@@ -39,6 +39,7 @@
   <div class="white"></div>
   <div class="viewer">
     <div class="canvas-container">
+      <p style="color:hsl(0, 0%, 40%) ;">Blue or blury backound = Loading</p>
       <div class="canvas-viewer"> <canvas id="canvasConfig"></canvas></div>
     </div>
     <div class="content">
@@ -53,18 +54,20 @@
         <div class="toggle-menue" id="toggleMenue">
           <svg xmlns="http://www.w3.org/2000/svg" width="6.414" height="11.414" viewBox="0 0 6.414 11.414">
             <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
-              stroke-linecap="round" stroke-width="1" />
+            stroke-linecap="round" stroke-width="1" />
             <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
-              stroke-linecap="round" stroke-width="1" />
+            stroke-linecap="round" stroke-width="1" />
           </svg>
         </div>
       </div>
       <!-- Showing all paameters -->
       <div id="parameterContainer" class="parameter-container">
-
+        
       </div>
-      <div class="button-container" style="margin: 5em 0 5em"><a class="btn submit" href="thankyou.html"
-          id="submit">Submit</a></div>
+      <div class="button-container" style="margin: 5em 0 0em 0"><a class="btn submit" href="thankyou.html"
+        id="submit">Submit</a></div>
+        <div class="button-container" style="margin: 0em 0 5em"><a class="btn about" href="feedbackSum.html"
+          id="submit">Auswertung Feedback</a></div>
 
 </body>
 

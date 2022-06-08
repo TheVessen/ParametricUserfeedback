@@ -1,0 +1,70 @@
+@import "main.scss";
+
+
+.img-container-1 {
+    img {
+        width: 100%;
+    }
+
+    p {
+        margin: 2rem 0;
+    }
+}
+
+
+.shapes {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+.i-container {
+    overflow: hidden;
+    height: max-content;
+}
+
+h2 {
+    text-align: center;
+    margin: 5rem 0;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin: 5rem 0;
+}
+
+.img-container-2 {
+    img{
+
+        width: 100%;
+        height: 100vh;
+        object-fit: contain;
+    }
+    
+}
+
+
+@include breakpoint(tablet){
+    .img-container-2 {
+
+        img{
+    
+            width: 100%;
+            height: 100vh;
+        }
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    background: color(act2);
+    border-radius: 10px;
+}

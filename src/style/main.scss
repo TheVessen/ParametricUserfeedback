@@ -10,6 +10,12 @@
         }
     }
 
+    @else if $point==mobile {
+        @media screen and (min-height: 120px) {
+            @content;
+        }
+    }
+
     @else if $point==mobileTall {
         @media screen and (min-height: 800px) {
             @content;
@@ -84,9 +90,13 @@ $colors: ( //main colors
     btn2: #3c8897,
     btn2Hover: #3c8897,
     btnAbout: #545454,
-    act1: #4692f0,
-    act2: #ff4858,
+    act1: #4793f0,
+    act2: #ff4757,
+    act1ds: hsl(213, 50%, 61%),
+    act2ds: hsl(355, 50%, 64%),
+
     infoContainer: #575757,
+    sorfGrey: #707070,
     boderColor: rgba(126, 126, 126, 0.5));
 
 /*
@@ -106,6 +116,7 @@ $margin-desktop: 25vw;
     text-decoration: none;
     color: #1a1a1a;
     -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -117,6 +128,7 @@ body {
 
 h1{
     font-size: 2em;
+    
     @include breakpoint(tablet){
         font-size: 2.8em;
     }
@@ -129,7 +141,12 @@ h3{
 }
 
 p{
-    letter-spacing: .08em;
+    color: color(sorfGrey);
+    text-align: center;
+    @include breakpoint(tablet){
+        font-size: 1.2em;
+
+    }
 }
 
 .content {
@@ -157,7 +174,7 @@ p{
     width: 12em;
     border-radius: 2em;
     font-weight: 600;
-    letter-spacing: .2em;
+    letter-spacing: .1em;
     text-transform: uppercase;
     transition: .5s;
     color: black !important;
@@ -291,16 +308,91 @@ svg {
     margin: 1em 0;
     opacity: .8;
     font-weight: 500;
+    color: white;
+    strong{
+        color: white;
+    }
+
 
     @include breakpoint(tablet) {
         margin: 0;
         padding: 0;
         top: 5vh;
         color: black;
-        position: fixed;
+        position: absolute;
         left: 2em;
         width: 18vw;
         opacity: .5;
         text-align: left;
+        strong{
+            color: black ;
+        }
     }
+}
+
+
+
+ul{
+    list-style: none;
+}
+
+
+//jump to top arrow
+.fa-arrow-alt-circle-up {
+    font-size: 2em;
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    cursor: pointer;
+    color: color(lightGray);
+    opacity: 0.6;
+    transition: 0.2s;
+    z-index: 1000;
+}
+
+.fa-arrow-alt-circle-up:hover {
+    color: color(olives);
+    transition: .2s;
+}
+
+@keyframes scale{
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.1);
+}
+100% {
+    transform: scale(1);
+}
+
+}
+.arrow-container{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+
+.arrow {
+    height: 3rem;
+    opacity: 0.8;
+    bottom: 5vh;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-left: -7px;
+    animation: scale 1s 5;
+}
+
+.arrow:hover{
+    opacity: 1;
+}
+
+.arrow-container{
+    position: absolute;
+    bottom: 50px;
 }

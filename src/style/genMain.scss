@@ -36,16 +36,34 @@
 //Sidebar 
 $time: 1s;
 
+.sidebar, .extra-info, .unfixed{
+    display: none;
+
+}
+
+@include breakpoint(tablet){
+
+    .sidebar, .extra-info{
+        display: block !important;
+    
+    }
+}
+
+@include breakpoint(tablet){
+    .note{
+        display: none;
+    }
+}
 
 
 .extra-info{
     transition: $time;
     width: 0px;
-    height: 100%;
+    height: 100vh;
     position: fixed;
     right: 0;
     top: 0;
-    background-color: color(mokka);
+    background-color: color(white);
     overflow: hidden;
     
 }
@@ -65,9 +83,9 @@ $time: 1s;
     width: 200vw;
     position: absolute;
     left: 25vw;
-    top: 5vh;
     display: none;
     transition: 2s;
+    top: 0;
 
     .u-content {
         opacity: 0;
@@ -164,6 +182,10 @@ $time: 1s;
     margin: 1em 2em;
     font-size: 1.2em;
     line-height: 3em;
+    p{
+        text-align: left;
+        color: white !important;
+    }
 
     .val {
         text-align: right;

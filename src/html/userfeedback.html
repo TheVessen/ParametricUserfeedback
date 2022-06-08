@@ -1,51 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Feedback</title>
-    <link rel="stylesheet" href="../style/indexUserfeedback.scss">
+    <link rel="stylesheet" href="../style/landing_Tools.scss">
+    <link rel="stylesheet" href="../style/landing-tool1.scss">
+    <link rel="stylesheet" href="/src/style/fontawesome-free/css/all.min.css">
     <link rel="icon" href="../img/TabIcon_1.svg">
-    <script src="../scripts/indexUserfeedback.js" type="module"></script>
+
+
     <script>
         var timerId = 0
-    
+
         document.addEventListener("mousemove", function () {
-          clearTimeout(timerId);
-          timerId = setTimeout(function () {
-            window.location.href = '../index.html';
-          }, 20000);
+            clearTimeout(timerId);
+            timerId = setTimeout(function () {
+                window.location.href = '../index.html';
+            }, 120000);
         });
-      </script>
+    </script>
+    <script>
+        window.smoothScroll = function (target) {
+            var scrollContainer = target;
+            scrollContainer.scrollIntoView({
+                behavior: 'smooth'
+            })
+        }
+    </script>
+
 </head>
 
-<body>
-    <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: rgb(245, 245, 245);" href="../index.html">
-        <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414"
-        viewBox="0 0 19.207 11.414">
-        <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
-        stroke-linecap="round" stroke-width="1.6" />
-        <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
-        stroke-linecap="round" stroke-width="1.6" />
-        <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
-        stroke-linecap="round" stroke-width="1.6" />
-    </svg>
-</a></div>
-<div class="viewer">
-    <div class="content">
-            <h1 class="title">User Feedback durch <strong>Parametrisches Design</strong></h1>
-            <div id="canvas-container">
-                <canvas id="canvasIndex"></canvas>
-            </div>
-            <div class="description">
-                <p>Interactive content</p>
-            </div>
-            <div class="button-container"><a class="custom btn" href="configurator.html">Vote</a></div>
-            <div class="button-container" style="margin-top: 2em"><a class="about btn" href="#">About</a></div>
-        </div>
-    </div>
-</body>
 
+<body id="top">
+    <i class="fas fa-arrow-alt-circle-up" id="arrow" type="button"
+        onclick="smoothScroll(document.getElementById('top'))"></i>
+
+    <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: black;" href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414" viewBox="0 0 19.207 11.414">
+                <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+            </svg>
+        </a></div>
+    <section class="landing">
+        <h1 class="title">User Feedback durch <strong>Parametrisches Design</strong></h1>
+        <h3>Qualitatives Design Feedback von überall <br> ohne Fachsprache und automatisiert?</h3>
+
+        <div class="content">
+            <a href="configurator.html">
+                <div class="btn cta1">Stimm ab!</div>
+            </a>
+
+        </div>
+        <div class="arrow-container">
+            <div type="button" onclick="smoothScroll(document.getElementById('next'))">
+                <img src="../img/arrow.svg" height="80" class="arrow" id="arrowd">
+            </div>
+        </div>
+
+    </section>
+    <section class="info">
+        <div class="container" id="next">
+
+            <article>
+                <p>In diesem prototypischen Tool geht es um eine Vision, wie Parametrisches Design im Designprozess
+                    eingesetzt werden kann, um Design Feedback einzuholen:</p>
+                <p class="end">Dies wird hier exemplarisch an einem Kopfhörer gezeigt</p>
+            </article>
+            <a href="configurator.html">
+                <div class="btn cta2">Stimm ab!</div>
+            </a>
+            <a href="about-tool1.html">
+                <div class="btn about-t1">About</div>
+            </a>
+        </div>
+    </section>
+</body>
 </html>

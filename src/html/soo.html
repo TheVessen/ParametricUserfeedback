@@ -9,7 +9,19 @@
     <link rel="stylesheet" href="../style/genMain.scss">
     <script src="../scripts/toggle_gend.js " type="module"></script>
     <script src="../scripts/soo.js " type="module"></script>
-    <title>Single Objective</title>
+    <title>Single Objective Optimization</title>
+    <link rel="icon" href="../img/TabIcon_1.svg">
+
+    <script>
+        var timerId = 0
+    
+        document.addEventListener("mousemove", function () {
+          clearTimeout(timerId);
+          timerId = setTimeout(function () {
+            window.location.href = '../index.html';
+          }, 120000);
+        });
+      </script>
 </head>
 
 <body>
@@ -27,7 +39,7 @@
         </a></div>
     <div class="content">
         <h1 class="title">Formfindung mit <strong style="color: black;"> Generativem Design </strong> <br><strong
-            style="font-weight: 300 ; color: black; font-size : .7emem;">Kopfhörer gehäuse</strong></h1>
+            style="font-weight: 300 ; color: black; font-size : .7emem;">Kopfhörer Gehäuse</strong></h1>
         <div class="img-canvas">
             <img id="img-canvas" src="../img/Soo_0.png" alt="">
         </div>
@@ -42,7 +54,7 @@
             <a href="moo.html" class="btnmoo"> <div>Multi Objective Optimization</div> </a>
         </div>
         <p style="color: black; font-size: 1em; text-align: center; margin: 0em 0 0em; opacity: .6; font-weight: 500;">Wähle den
-            Optimisierungs Algotythmus</p>
+            Wähle den Optimisierungs-Algorithmus</p>
     </div>
     <div class="sidebar">
         <h3 style="text-align: center;">Infos</h3>
@@ -72,19 +84,9 @@
     </div>
     <div class="unfixed" id="unfixed">
         <div class="u-content">
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
-            <p>some text</p>
+            <div class="schema">
+                <img src="../img/SOO-Schema.svg" alt="">
+            </div>
         </div>
         
     </div>

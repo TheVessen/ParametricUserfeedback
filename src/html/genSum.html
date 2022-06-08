@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Auswertung</title>
+    <link rel="stylesheet" href="../style/genSumm.scss">
+    <link rel="icon" href="../img/TabIcon_1.svg">
+
+    <script>
+          var timerId = 0
+
+          document.addEventListener("mousemove", function () {
+            clearTimeout(timerId);
+            timerId = setTimeout(function () {
+              window.location.href = '../index.html';
+            }, 120000);
+          });
+        
+    </script>
+</head>
+
+<body>
+    <div class="content">
+
+        <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: rgb(245, 245, 245);"
+                href="../html/landing-tool2.html">
+                <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414"
+                    viewBox="0 0 19.207 11.414">
+                    <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
+                        stroke-linecap="round" stroke-width="1.6" />
+                    <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
+                        stroke-linecap="round" stroke-width="1.6" />
+                    <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
+                        stroke-linecap="round" stroke-width="1.6" />
+                </svg>
+            </a></div>
+        <h2 style="opacity: .6;">
+            Die folgenden Bilder sollen zeigen wie ich nach dem Generieren der Kopfhörermuscheln vorgegangen bin
+        </h2>
+        <div class="shapes">
+
+            <img src="../img/Shapes.jpg" alt="">
+        </div>
+        <div class="img-container-1">
+            <p>Hier zusehen sind die 70 der 1400 genierten Designvarianten. Diese Vorauswahl wurde durch den Algorithmus basierten darauf gemacht, wie gut die Designziele durch die Varianten erfüllt wurden. </p>
+
+            <img src="../img/ind_43_raw.jpg" alt="">
+            <p>Variante 43 schien mir optimal. Das Spinnendiagramm zeigt, dass die Stärken bzw. Schwächen in
+                dieser Variante keine extremen Auschläge. Aus diesem grund ist diese Designvariante relativ ausgewogen. Neben der
+                reinen Designperformance war dieses Ergebis eine gute Basis für weitere manuelle Anpassungen, um die Form ein
+                wenig harmonischer zu gestalten.</p>
+            <img src="../img/ind_43 anpassing.jpg" alt="">
+            <p>Designvariante 43 nach manueller Anpassung einiger Parameter</p>
+            <img src="../img/ind_43 anpassing_Rhino.jpg" alt="">
+            <p>Weitere Anpassungen an der Form in "Rhino"</p>
+        </div>
+        <h3 style="text-align: center; opacity: .6;">Wie die generierte und angepasste Kopfhörermuschel im ganzen Produkte
+            aussehen könnte ist hier zusehen</h3>
+    </div>
+    <div class="img-container-2">
+        <img  src="../img/MMO_IND43_01.jpg" alt="">
+        <img  src="../img/MMO_IND43_02.jpg" alt="">
+    </div>
+
+</body>
+
+</html>

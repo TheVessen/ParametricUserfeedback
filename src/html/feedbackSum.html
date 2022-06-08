@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Auswertung</title>
+    <link rel="stylesheet" href="../style/feedbackSum.scss">
+    <link rel="icon" href="../img/TabIcon_1.svg">
+    
+
+    <script>
+          var timerId = 0
+      
+          document.addEventListener("mousemove", function () {
+            clearTimeout(timerId);
+            timerId = setTimeout(function () {
+              window.location.href = '../index.html';
+            }, 120000);
+          });
+        </script>
+</head>
+
+<body>
+    <div class="content">
+
+        <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: rgb(245, 245, 245);"
+                href="../html/userfeedback.html">
+                <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414"
+                    viewBox="0 0 19.207 11.414">
+                    <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
+                        stroke-linecap="round" stroke-width="1.6" />
+                    <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
+                        stroke-linecap="round" stroke-width="1.6" />
+                    <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
+                        stroke-linecap="round" stroke-width="1.6" />
+                </svg>
+            </a></div>
+            <h1 style="text-align:center; opacity: .6; margin-top: 5vh;">Zwischenauswertung des Feedbacks</h1>
+            <h2 style="margin: 5rem 0; text-align:center; opacity:.6; font-weight:400;">Zur Zeit der Auswertung sind 27 Feedbacks eingegangen, die folgende Tabelle zeigt die Auswertung der Daten.</h2>
+            <img src="../img/Auswertung.svg" alt="">
+            <p style="text-align: left;">Die genaue Auswertung ist der Dokumentation dieser Thesis zu entnehmen</p>
+            <p style="margin: 5rem 0">Auf den folgenden Abbildungen ist ein ausgearbeitetes Modell des Kopfhörers, basierend aus der Auswertung zu sehen.<p>
+        </div>
+        <div class="img-container" style="margin:0; padding: 0;">
+            <img style="width: 100%;" src="../img/Headphones_.Feedback_1.jpg" alt="">
+            <img style="width: 100%;" src="../img/Headphones_.Feedback_2.jpg" alt="">
+        </div>
+
+</body>
+
+</html>

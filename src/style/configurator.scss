@@ -5,6 +5,10 @@ body {
 
 }
 
+.title{
+    position: fixed !important;
+}
+
 
 $canvas-heigt-mobile: 50vh;
 $canvas-heigt-desktop: 50vh;
@@ -209,7 +213,7 @@ $canvas-heigt-desktop: 50vh;
     background: color(act1);
     color: color(neutralGrey);
     opacity: 1;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 }
 
 @include breakpoint(tablet) {
@@ -265,4 +269,35 @@ line {
 
 .scroll-lock {
     overflow-y: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    background: color(act1);
+    border-radius: 10px;
+}
+
+.title{
+    display: none;
+}
+
+
+@include breakpoint(tablet){
+    .title{
+        display: block;
+    }
+}
+
+.about{
+    border: 2px solid color(act1);
+    width: 15rem;
+    font-size: 1em;
+}
+
+@include breakpoint(tablet){
+    .about{
+        opacity: .5;
+    }
+    .about:hover{
+        opacity: 1;
+    }
 }

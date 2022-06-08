@@ -1,77 +1,109 @@
 @import "main.scss";
 
-line{
-    stroke: white;
-}
-
-body{
-    overflow-x: hidden;
-}
-.arrow{
-    position: fixed; 
-    left: 1em; 
-    top: 1em;
-    @include breakpoint(tablet){
-        left: 2em;
-        top: 2em;
+.content-about {
+    p {
+        color: color(sorfGrey);
     }
+
+    margin: 5rem 2rem 5rem;
 }
 
-img{
+
+ol {
+    li {
+        line-height: 1.4em;
+        color: color(sorfGrey);
+    }
+
+}
+
+img {
     width: 100%;
+    height: auto;
+}
 
-    margin: 2em 0 2em;
-    @include breakpoint(tablet){
-        
-        margin: 5em 0 2em;
-        width: 80%; 
+@include breakpoint(tablet) {
+    .content-about {
+        p {
+            color: color(sorfGrey);
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        margin: 5rem 15rem 5rem;
+    }
+
+    .summary {
+        margin: 0 0 15rem;
+    }
+
+    .t1,
+    .t2 {
+        margin: 5rem 0 5rem;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        height: 70vh;
+        .gt1l {
+            grid-column: 1 / 4;
+            img{
+                object-position: left;
+            }
+        }
+        .gt1r {
+            grid-column: 4 / 7;
+        }
+        .gt2l {
+            grid-column: 1 / 4;
+        }
+        .gt2r {
+            grid-row: 1;
+            grid-column: 4 / 7;
+            img{
+                object-position: right;
+            }
+        }
+    }
+
+    .container-1 {
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+
+    .container-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    ol {
+
+        li {
+            font-size: 1.4em;
+            letter-spacing: .1em;
+            margin: 1rem 0;
+        }
     }
 }
 
-.container{
-    margin-top: 10vh;
-    text-align: center;
-    h1{
-        margin: 1em 0;
-        font-size: 1.8em !important;
-        letter-spacing: .05em;
-        text-transform: uppercase;
+.process{
+    width: 100%;
+    height: 20vh;
+    margin: 5rem 0;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
     }
-    h2{
-        margin: 1em 0;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        
-    }
-    h3{
-        font-weight: 100;
-        margin: 1em 0;
-        text-transform: uppercase;
-    }
-    ul{
-        margin-left: 1em;
-    }
-    list-style-position: outside;
-    li{
-        list-style-position: unset;
-    };
-    @include breakpoint(tablet){
-        h1{
-            font-size: 3em;
-        }
-        h2{
-            font-size: 2em;
-        }
-        h3{
-            font-size: 1.6em;
-        }
-        p{
-            font-size: 1.3em;
-            line-height: 1.8em;
-        }
-        li{
-            font-size: 1.3em;
-            line-height: 1.8em;
-        }
-    }
+}
+
+.button-container{
+    width: 100%;
 }
