@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/about.scss">
+    <link rel="icon" href="../img/TabIcon_1.svg">
+
+    <title>About Feedback</title>
+    <script>
+        var timerId = 0
+    
+        document.addEventListener("mousemove", function () {
+          clearTimeout(timerId);
+          timerId = setTimeout(function () {
+            window.location.href = '../index.html';
+          }, 120000);
+        });s
+      </script>
+</head>
+
+<body>
+    <div style="position: fixed; left: 2em; top: 2em; z-index: 10000; "><a style="color: black;"
+            href="../html/userfeedback.html">
+            <svg style="transform: scale(2);" xmlns="http://www.w3.org/2000/svg" width="19.207" height="11.414"
+                viewBox="0 0 19.207 11.414">
+                <line id="Line_1" data-name="Line 1" x2="18" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_2" data-name="Line 2" x1="5" y2="5" transform="translate(0.707 0.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+                <line id="Line_3" data-name="Line 3" x1="5" y1="5" transform="translate(0.707 5.707)" fill="none"
+                    stroke-linecap="round" stroke-width="1.6" />
+            </svg>
+        </a>
+    </div>
+    <div class="content-about">
+        <h1 style="text-align: center;">User Feedback durch Parametrisches Design</h1>
+        <section class="t1">
+            <div class="container-1 gt1l ">
+                <img src="../img/schema/schema_1.svg" alt="">
+            </div>
+            <div class="container-2 gt1r">
+                <ol>
+                    <li>Der/Die Designer:in definiert, über welche Aspekte vom Design sie Feedback einholen möchte</li>
+                    <li>Damit User:innen mit dem Produkt interagieren und Feedback abgeben können, muss ein
+                        parametrisches Modell des ganzen Produktes oder Teilen des Produktes erstellt werden. In dieser
+                        Arbeit wird hierfür die Applikation Grasshopper verwendet</li>
+                    <li>Um das parametrische Modell im Web nutzen zu können, muss dieses für das Web konvertiert und
+                        jeweils neu berechnet werden. In dieser Arbeit wird hierfür die Webseite Shapediver genutzt
+                    </li>
+                    <li>Auf der Webseite können Benutzer:innen Parameter im Rahmen des Feedbacks nach ihren Wünschen und
+                        Anforderungen anpassen</li>
+                    <li>Die eingegebenen Parameter werden in einer Datenbank gespeichert und können durch die
+                        Designenden ausgewertet werden </li>
+                    <div class="process">
+                        <img src="../img/schema/prozess_1.svg" alt="">
+                    </div>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
